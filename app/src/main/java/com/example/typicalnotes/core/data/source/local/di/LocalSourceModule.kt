@@ -44,7 +44,7 @@ abstract class LocalSourceModuleBinder {
     ) : LocalDataSource
 
     @Binds
-    abstract fun bindDefaultTypicalNotesRepository(
+    abstract fun bindLocalDataSourceRepository(
         defaultTypicalNoteRepository: LocalDataSourceRepositoryImpl
     ) : LocalDataSourceRepository
 }

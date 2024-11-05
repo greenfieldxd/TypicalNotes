@@ -1,7 +1,8 @@
 package com.example.typicalnotes.core.data.source.local
 
-import com.example.typicalnotes.core.data.mapper.NoteEntityMapper.toNote
-import com.example.typicalnotes.core.data.mapper.NoteEntityMapper.toNoteEntity
+import com.example.typicalnotes.core.data.mapper.toNote
+import com.example.typicalnotes.core.data.mapper.toNoteEntity
+import com.example.typicalnotes.core.data.source.local.dao.NoteDao
 import com.example.typicalnotes.core.domain.model.Note
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -9,7 +10,7 @@ import javax.inject.Inject
 import kotlin.collections.map
 
 class RoomLocalDataSource @Inject constructor(
-    private val noteDao: com.example.typicalnotes.core.data.source.local.dao.NoteDao
+    private val noteDao: NoteDao
 ) : LocalDataSource {
 
     override fun getAllNotesFlow(): Flow<List<Note>> {
